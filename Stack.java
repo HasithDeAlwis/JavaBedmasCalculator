@@ -1,12 +1,10 @@
-public class Stack {
-    //Top of the stack
-    Node head;
+public class Stack extends LinkedList{
     
 
     //Constructors for Stack
     public Stack()
     {
-        this.head = null;
+        this.head = new Node(null, null);
     }
 
     public Stack(Node head)
@@ -20,8 +18,8 @@ public class Stack {
      */
     public void push(String cargo)
     {
-        //Make this.head.next point to the original top of the stack and change its cargo
-        this.head = new Node(cargo, this.head);
+        //call addFirst(String cargo) method from the parent class to push an element
+        addFirst(cargo);
     }
     /**
      * Remove the top most element of a stack
@@ -29,11 +27,8 @@ public class Stack {
      */
     public Node pop()
     {
-        //Dummy node
-        Node holder = this.head;
-        //make this.head equal to the next Node, removing that node from the stack
-        this.head = this.head.next;
-        //Return the dummy node
-        return holder;
+        //call remove first in parent class
+        return removeFirst();
+
     }
 }

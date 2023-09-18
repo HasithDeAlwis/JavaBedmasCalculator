@@ -27,4 +27,9 @@ public class Node {
         this.cargo = cargo;
         this.isOperation = null;
     }
+
+    public String toString()
+    {
+        return("\nCargo: " + cargo + " Next: " + next + "\n");
+    }
 }
